@@ -457,7 +457,7 @@ const GameSessionDebug = () => {
             <p className="text-gray-500 italic">No events logged yet</p>
           ) : (
             logs.map((log, index) => (
-              <div key={index} className="mb-1">
+              <div key={index} className="mb-1 left">
                 <span className="text-gray-500">[{log.timestamp}]</span>{' '}
                 <span 
                   className={`font-medium ${

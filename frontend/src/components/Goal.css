@@ -1,0 +1,152 @@
+/* Goal component styles */
+
+.goal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.goal-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.goal-title.goal-scored {
+  color: #059669;
+}
+
+.goal-title.goal-saved {
+  color: #DC2626;
+}
+
+.field-background {
+  background-color: #16A34A;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  position: relative;
+  aspect-ratio: 16/6;
+  width: 600px;
+}
+
+.goal-structure {
+  position: relative;
+  aspect-ratio: 16/6;
+  border-top: 8px solid #4B5563;
+  border-left: 8px solid #4B5563;
+  border-right: 8px solid #4B5563;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.goal-net {
+  position: absolute;
+  inset: 0;
+  background-color: #F3F4F6;
+  /* Net pattern would be added with a background pattern */
+}
+
+.goal-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.goal-cell {
+  border: 1px dashed #9CA3AF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.goal-cell:not(.disabled):not(.result-mode) {
+  cursor: pointer;
+}
+
+.goal-cell:not(.disabled):not(.result-mode):hover {
+  background-color: rgba(219, 234, 254, 0.5);
+}
+
+.goal-cell.selected {
+  background-color: #DBEAFE;
+}
+
+.goal-cell.collision {
+  background-color: #FEF3C7;
+}
+
+.goal-cell.disabled {
+  opacity: 0.5;
+}
+
+.marker {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+}
+
+.marker.kicker {
+  background-color: #EF4444;
+}
+
+.marker.goalkeeper {
+  background-color: #F59E0B;
+}
+
+.goal-post {
+  height: 1rem;
+  width: 3rem;
+  background-color: white;
+  border: 1px solid #D1D5DB;
+  border-radius: 9999px;
+  margin-top: -0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.selection-text {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.selection-text p {
+  font-size: 0.875rem;
+}
+
+.selection-text span {
+  font-weight: 500;
+}
+
+/* Animation keyframes */
+@keyframes ping-once {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-ping-once {
+  animation: ping-once 0.5s ease-out 1;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(-25%); }
+  50% { transform: translateY(0); }
+}
+
+.animate-bounce {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
