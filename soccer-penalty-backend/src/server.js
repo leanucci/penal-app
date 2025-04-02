@@ -4,6 +4,8 @@ const socketIo = require('socket.io');
 const cors = require('cors');
 require('dotenv').config();
 
+const routes = require('./routes');
+
 // Initialize app
 const app = express();
 const server = http.createServer(app);
@@ -18,7 +20,10 @@ const io = socketIo(server, {
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// Api routes
+app.use('/api', routes);
+
+// Root route
 app.get('/', (req, res) => {
   res.send('Soccer Penalty Shootout API is running');
 });
