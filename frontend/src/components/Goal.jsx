@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import './Goal.css'; // We would need to create this CSS file
+import './Goal.css'; 
+import netSvg from '../assets/net.svg';
 
-/**
- * Goal visualization component without Tailwind CSS
- */
 const Goal = ({ 
   onPositionSelect, 
   isDisabled = false,
@@ -63,16 +61,13 @@ const Goal = ({
     <div className="goal-container">
       <h3 className={`goal-title ${showResult ? (isGoal ? 'goal-scored' : 'goal-saved') : ''}`}>
         {showResult
-          ? (playerRole === 'kicker'
-              ? (isGoal ? 'GOAL! 🎉' : 'Saved! 😖')
-              : (isGoal ? 'Goal conceded 😖' : 'Great save! 🎉'))
+          ? (isGoal ? 'Goal conceded 😖' : 'Great save! 🎉')
           : (playerRole === 'kicker' ? 'Select where to kick' : 'Select where to dive')}
       </h3>
       
       <div className="field-background">
         <div className="goal-structure">
           <div className="goal-net">
-            {/* Net SVG pattern would go here */}
           </div>
           
           <div className="goal-grid">
@@ -114,9 +109,7 @@ const Goal = ({
               );
             })}
           </div>
-        </div>
-        
-        <div className="goal-post"></div>
+        </div>        
       </div>
       
       {actualSelectedPosition && !showResult && (
