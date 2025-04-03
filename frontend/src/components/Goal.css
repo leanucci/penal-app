@@ -61,6 +61,11 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
+  background-image: url('../assets/net.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.7;
 }
 
 .goal-cell:not(.disabled):not(.result-mode) {
