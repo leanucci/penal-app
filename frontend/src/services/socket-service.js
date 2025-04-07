@@ -1,7 +1,7 @@
 import { io } from 'socket.io-client';
 
 // Get server URL from environment or use default
-const SOCKET_SERVER_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const SOCKET_SERVER_URL = import.meta.env.VITE_API_URL || 'http://192.168.1.4:3000';
 
 // Create a singleton socket instance
 let socket;

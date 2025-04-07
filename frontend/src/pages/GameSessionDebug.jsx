@@ -292,22 +292,20 @@ const GameSessionDebug = () => {
         <h2 className="text-lg font-semibold mb-2">Connection Status</h2>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <p className="text-sm text-gray-600">Socket Connected:</p>
-            <div className={`font-medium ${isConnected ? 'text-green-600' : 'text-red-600'}`}>
-              {isConnected ? 'Connected' : 'Disconnected'}
-            </div>
+            <p className="text-sm text-gray-600">
+              Socket Connected: {isConnected ? 'Connected' : 'Disconnected'}
+            </p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">Socket ID:</p>
-            <div className="font-mono text-sm truncate">{socketId || 'None'}</div>
+            <p className="text-sm text-gray-600">
+              Socket ID: {socketId || 'None'}
+            </p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">Player ID:</p>
-            <div className="font-mono text-sm truncate">{playerId || 'Not registered'}</div>
+            <p className="text-sm text-gray-600">Player ID: {playerId || 'Not registered'} </p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">Game ID:</p>
-            <div className="font-mono text-sm truncate">{gameId || 'Not in game'}</div>
+            <p className="text-sm text-gray-600">Game ID: {gameId || 'Not in game'}</p>
           </div>
         </div>
         
