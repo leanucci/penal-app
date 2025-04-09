@@ -2,10 +2,11 @@ import { useState } from 'react';
 import SocketTest from './components/SocketTest';
 import GoalTestPage from './components/GoalTestPage';
 import GameSessionDebug from './pages/GameSessionDebug';
+import GameRoomTestPage from './pages/GameRoomTestPage';
 import './App.css';
 
 function App() {
-  const [activePage, setActivePage] = useState('session-debug'); // Default to session debug page
+  const [activePage, setActivePage] = useState('game-room'); // Default to session debug page
   
   // Navigate between different test pages
   const navigateTo = (page) => {
@@ -21,6 +22,8 @@ function App() {
         return <GoalTestPage />;
       case 'session-debug':
         return <GameSessionDebug />;
+      case 'game-room':
+        return <GameRoomTestPage />;
       default:
         return <div>Page not found</div>;
     }
@@ -30,7 +33,17 @@ function App() {
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col">
       {/* Navigation */}
       <div className="mx-auto w-full max-w-3xl px-4 mb-6">
-        <nav className="flex space-x-4 bg-white rounded-lg shadow p-2">
+        <nav className="flex flex-wrap space-x-2 space-y-2 sm:space-y-0 bg-white rounded-lg shadow p-2">
+          <button
+            onClick={() => navigateTo('game-room')}
+            className={`px-4 py-2 rounded ${
+              activePage === 'game-room'
+                ? 'bg-blue-500 text-white'
+                : 'bg-gray-200 hover:bg-gray-300'
+            }`}
+          >
+            Game Room
+          </button>
           <button
             onClick={() => navigateTo('session-debug')}
             className={`px-4 py-2 rounded ${
